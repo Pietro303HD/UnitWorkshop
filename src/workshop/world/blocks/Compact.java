@@ -5,6 +5,7 @@ import arc.graphics.*;
 import arc.graphics.g2d.*;
 import arc.math.*;
 import arc.util.*;
+import arc.struct.*;
 import mindustry.entities.bullet.*;
 import mindustry.game.*;
 import mindustry.gen.*;
@@ -36,6 +37,14 @@ public class Compact extends Block{
 
         public Seq<Weapon> getWeapons() {
             return weapons;
+        }
+
+        public void setUnit(UnitType unit) {
+            this.unit = unit;
+        }
+
+        public void setWeapons(Seq<Weapon> weapons) {
+            this.weapons = weapons;
         }
     }
 }
