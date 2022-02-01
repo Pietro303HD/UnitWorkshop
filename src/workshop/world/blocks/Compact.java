@@ -29,5 +29,13 @@ public class Compact extends Block{
     public class CompactBuild extends Building{
         Seq<Weapon> weapons = Seq.with();
         UnitType unit;
+
+        public UnitType getUnit() {
+            return unit;
+        }
+
+        public Seq<Weapon> getWeapons() {
+            return weapons;
+        }
     }
 }
