@@ -32,6 +32,7 @@ public class TestBlock extends PayloadBlock{
         public void buildConfiguration(Table table){
             table.button(Icon.download, () -> {
                 payload = new BuildPayload(Blocks.router, team);
+                moveOutPayload();
             });           
         }
 
