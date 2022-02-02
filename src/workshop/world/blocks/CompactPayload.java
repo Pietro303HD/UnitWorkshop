@@ -14,8 +14,8 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
 
-public class Compact extends Block{
-    public Compact(String name){
+public class CompactPayload extends Block{
+    public CompactPayload(String name){
         super(name);
 
         buildVisibility = BuildVisibility.sandboxOnly;
@@ -27,7 +27,7 @@ public class Compact extends Block{
         return false;
     }
 
-    public class CompactBuild extends Building{
+    public class CompactPayloadBuild extends Building{
         Seq<Weapon> weapons = Seq.with();
         UnitType unit;
 
@@ -41,10 +41,6 @@ public class Compact extends Block{
 
         public void setUnit(UnitType unit) {
             this.unit = unit;
-        }
-
-        public void setWeapons(Seq<Weapon> weapons) {
-            this.weapons = weapons;
         }
     }
 }
