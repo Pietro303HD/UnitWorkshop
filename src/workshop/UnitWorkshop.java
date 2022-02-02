@@ -2,8 +2,12 @@ package workshop;
 
 import arc.util.*;
 import mindustry.mod.*;
+import workshop.content.*;
 
 public class UnitWorkshop extends Mod{
+    private final ContentList[] content = {
+        new UWBlocks()
+    };
 
     public UnitWorkshop(){
         Log.info("Constructor has been called.");
@@ -11,7 +15,9 @@ public class UnitWorkshop extends Mod{
 
     @Override
     public void loadContent(){
-        Log.info("Loading no content, for now.");
+        for(ContentList list : content){
+            list.load();
+        }
     }
 
 }
