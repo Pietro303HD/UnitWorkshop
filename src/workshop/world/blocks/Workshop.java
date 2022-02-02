@@ -23,6 +23,7 @@ public class Workshop extends PayloadBlock{
         size = 5;
         outputsPayload = true;
         rotate = true;
+        update = true;
         buildVisibility = BuildVisibility.shown;
         category = Category.units;
         configurable = true;
@@ -34,6 +35,7 @@ public class Workshop extends PayloadBlock{
         @Override
         public void update(){
             super.update();
+            if (payload != null) dumpPayload();
         }
 
         @Override
