@@ -31,17 +31,18 @@ public class Workshop extends PayloadBlock{
 
     public class WorkshopBuild extends PayloadBlockBuild<BuildPayload>{
         public ItemStack[] itemCost = ItemStack.with();
+        Boolean done = false;
 
         @Override
         public void update(){
             super.update();
-            if (payload != null) moveOutPayload();
+            if (payload != null && done) moveOutPayload();
         }
 
         @Override
         public void buildConfiguration(Table table){
             table.button(Icon.download, () -> createPayload());
-            table.button(Icon.star, () -> Log.info("Hello!"));
+            table.button(Icon.star, () -> done = true);
             table.row();
             for(WeaponRecipe recipe : recipes){
                 table.button(new TextureRegionDrawable(recipe.weapon.region), 32, () -> buildWeapon(recipe));
@@ -51,11 +52,16 @@ public class Workshop extends PayloadBlock{
         // temporary method for making CompactPayload
         public void createPayload(){
             payload = new BuildPayload(output, this.team);
+            if(payload.build instanceof CompactPayload.CompactPayloadBuild comp) {
+                comp.setUnit(UnitTypes.dagger);
+            };
             Log.info(this.payload);
         }
 
         public void buildWeapon(WeaponRecipe weapon){
-            // test
+            if(payload.build instanceof CompactPayload.CompactPayloadBuild comp) {
+                comp.weapons.add(weapon.weapon);
+            };
         }
     }
 }
