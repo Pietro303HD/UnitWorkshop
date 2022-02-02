@@ -3,6 +3,7 @@ package workshop.world.blocks;
 import mindustry.world.*;
 import mindustry.world.blocks.payloads.*;
 import mindustry.gen.*;
+import arc.scene.ui.layout.*;
 
 public class Workshop extends PayloadBlock{
     public Workshop(String name){
