@@ -1,6 +1,7 @@
 package workshop.world.blocks;
 
 import arc.scene.ui.layout.*;
+import arc.scene.style.*;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.gen.*;
@@ -40,7 +41,7 @@ public class Workshop extends PayloadBlock{
             table.button(Icon.download, () -> createPayload());
             table.row();
             for(WeaponRecipe weapon : recipes){
-                table.button("huh", () -> buildWeapon(weapon));
+                table.button(new TextureRegionDrawable(weapon.region), 32, () -> buildWeapon(weapon));
             }
         }
 
