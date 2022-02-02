@@ -22,7 +22,7 @@ public class Workshop extends PayloadBlock{
         configurable = true;
     }
 
-    public class WorkshopBuild extends PayloadBlockBuild{
+    public class WorkshopBuild extends PayloadBlockBuild<BuildPayload>{
         @Override
         public void buildConfiguration(Table table){
             table.button(Icon.download, () -> createPayload());
