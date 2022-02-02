@@ -31,8 +31,10 @@ public class Workshop extends PayloadBlock{
         // temporary method for making CompactPayload
         public void createPayload(){
             this.payload = new BuildPayload(output, this.team);
-            ((CompactPayload.CompactPayloadBuild) this.payload.build).setUnit(UnitTypes.dagger);
-            ((CompactPayload.CompactPayloadBuild) this.payload.build).weapons.add(UnitTypes.scepter.weapons.get(0));
+            if(payload.build instanceof CompactPayload.CompactPayloadBuild comp) {
+                comp.setUnit(UnitTypes.dagger);
+                comp.weapons.add(UnitTypes.scepter.weapons.get(0));
+            };
             moveOutPayload();
         }
     }
