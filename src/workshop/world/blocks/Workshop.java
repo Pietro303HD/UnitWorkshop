@@ -27,9 +27,15 @@ public class Workshop extends PayloadBlock{
     }
 
     public class WorkshopBuild extends PayloadBlockBuild<BuildPayload>{
+        public ItemStack[] itemCost = ItemStack.with();
+
         @Override
         public void buildConfiguration(Table table){
             table.button(Icon.download, () -> createPayload());
+            table.row();
+            for(WeaponRecipe weapon : recipes){
+                table.button("huh", () -> buildWeapon(weapon));
+            }
         }
 
         // temporary method for making CompactPayload
@@ -40,6 +46,10 @@ public class Workshop extends PayloadBlock{
                 comp.weapons.add(UnitTypes.scepter.weapons.get(0));
             };
             moveOutPayload();
+        }
+
+        public void buildWeapon(WeaponRecipe weapon){
+            // test
         }
     }
 }
