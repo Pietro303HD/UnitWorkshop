@@ -13,6 +13,6 @@ public class Workshop extends PayloadBlock{
         configurable = true;
     }
 
-    public class WorkshopBuild extends PayloadBuild{
+    public class WorkshopBuild extends PayloadBlockBuild{
     }
 }
