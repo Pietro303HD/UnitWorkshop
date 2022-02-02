@@ -9,14 +9,18 @@ import mindustry.world.*;
 import mindustry.world.meta.*;
 import mindustry.world.blocks.payloads.*;
 import workshop.world.blocks.*;
+import workshop.type.*;
 
 public class Workshop extends PayloadBlock{
     public Block output;
+    public WeaponRecipe[] recipes;
 
     public Workshop(String name){
         super(name);
 
-        size = 3;
+        size = 5;
+        outputsPayload = true;
+        rotate = true;
         buildVisibility = BuildVisibility.shown;
         category = Category.units;
         configurable = true;
