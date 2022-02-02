@@ -32,16 +32,16 @@ public class Workshop extends PayloadBlock{
 
         @Override
         public void update(){
-            this.super$update();
-            if(this.payload) this.dumpPayload();
+            super.update();
+            if(this.payload != null) this.dumpPayload();
         }
 
         @Override
         public void buildConfiguration(Table table){
             table.button(Icon.download, () -> createPayload());
             table.row();
-            for(WeaponRecipe weapon : recipes){
-                table.button(new TextureRegionDrawable(weapon.region), 32, () -> buildWeapon(weapon));
+            for(WeaponRecipe recipe : recipes){
+                table.button(new TextureRegionDrawable(recipe.weapon.region), 32, () -> buildWeapon(recipe));
             }
         }
 
