@@ -34,7 +34,6 @@ public class Workshop extends PayloadBlock{
         @Override
         public void update(){
             super.update();
-            if(this.payload != null) this.dumpPayload();
         }
 
         @Override
@@ -50,10 +49,12 @@ public class Workshop extends PayloadBlock{
         public void createPayload(){
             payload = new BuildPayload(output, this.team);
             Log.info(this.payload);
+            moveOutPayload();
             if(payload.build instanceof CompactPayload.CompactPayloadBuild comp) {
                 comp.setUnit(UnitTypes.dagger);
                 comp.weapons.add(UnitTypes.scepter.weapons.get(0));
             };
+            Log.info(this.payload);
         }
 
         public void buildWeapon(WeaponRecipe weapon){
