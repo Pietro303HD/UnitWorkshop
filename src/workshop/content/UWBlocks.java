@@ -2,6 +2,7 @@ package workshop.content;
 
 import mindustry.content.*;
 import mindustry.ctype.*;
+import mindustry.type.*;
 import mindustry.world.*;
 import workshop.world.blocks.*;
 import workshop.type.*;
