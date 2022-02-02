@@ -8,6 +8,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
 import mindustry.world.blocks.payloads.*;
+import workshop.world.blocks.*;
 
 public class Workshop extends PayloadBlock{
     public Block output;
@@ -30,8 +31,8 @@ public class Workshop extends PayloadBlock{
         // temporary method for making CompactPayload
         public void createPayload(){
             this.payload = new BuildPayload(output, this.team);
-            this.payload.build.setUnit(UnitTypes.dagger);
-            this.payload.build.weapons.add(UnitTypes.scepter.weapons.get(0));
+            ((CompactPayload) this.payload).build.setUnit(UnitTypes.dagger);
+            ((CompactPayload) this.payload).build.weapons.add(UnitTypes.scepter.weapons.get(0));
             moveOutPayload();
         }
     }
