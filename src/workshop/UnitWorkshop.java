@@ -2,6 +2,7 @@ package workshop;
 
 import arc.util.*;
 import mindustry.mod.*;
+import mindustry.ctype.*;
 import workshop.content.*;
 
 public class UnitWorkshop extends Mod{
