@@ -1,5 +1,6 @@
 package workshop.content;
 
+import mindustry.content.*;
 import mindustry.ctype.*;
 import mindustry.world.*;
 import workshop.world.blocks.*;
@@ -14,7 +15,7 @@ public class UWBlocks implements ContentList{
         workshop = new Workshop("workshop"){{
             output = unitCrate;
             recipes = [
-                new WeaponRecipe(ItemStack.with(Item.copper, 50), UnitTypes.scepter.weapons.get(0))
+                new WeaponRecipe(ItemStack.with(Items.copper, 50, Items.silicon, 100), UnitTypes.scepter.weapons.get(0))
             ];
         }};
     }
