@@ -26,9 +26,9 @@ public class Deployer extends PayloadBlock{
         category = Category.units;
     }
 
-    public class DeployerBuild extends PayloadBlockBuild<Payload>{
+    public class DeployerBuild extends PayloadBlockBuild<BuildPayload>{
         Boolean done = false;
-        Unit temp;
+        UnitPayload temp;
 
         @Override
         public void update(){
