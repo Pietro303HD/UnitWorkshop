@@ -30,6 +30,12 @@ public class Workshop extends PayloadBlock{
         public ItemStack[] itemCost = ItemStack.with();
 
         @Override
+        public void update(){
+            this.super$update();
+            if(this.payload) this.dumpPayload();
+        }
+
+        @Override
         public void buildConfiguration(Table table){
             table.button(Icon.download, () -> createPayload());
             table.row();
@@ -45,7 +51,6 @@ public class Workshop extends PayloadBlock{
                 comp.setUnit(UnitTypes.dagger);
                 comp.weapons.add(UnitTypes.scepter.weapons.get(0));
             };
-            moveOutPayload();
         }
 
         public void buildWeapon(WeaponRecipe weapon){
