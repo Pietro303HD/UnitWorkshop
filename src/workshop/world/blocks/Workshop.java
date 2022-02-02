@@ -15,5 +15,14 @@ public class Workshop extends PayloadBlock{
     }
 
     public class WorkshopBuild extends PayloadBlockBuild{
+        @Override
+        public void buildConfiguration(Table table){
+            table.button(Icon.download, () -> createPayload());
+        }
+
+        // temporary method for making CompactPayload
+        public void createPayload(){
+            this.payload = new BuildPayload();
+        }
     }
 }
