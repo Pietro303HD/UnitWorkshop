@@ -39,6 +39,7 @@ public class Workshop extends PayloadBlock{
         @Override
         public void buildConfiguration(Table table){
             table.button(Icon.download, () -> createPayload());
+            table.button(Icon.star, () -> moveOutPayload());
             table.row();
             for(WeaponRecipe recipe : recipes){
                 table.button(new TextureRegionDrawable(recipe.weapon.region), 32, () -> buildWeapon(recipe));
@@ -48,12 +49,6 @@ public class Workshop extends PayloadBlock{
         // temporary method for making CompactPayload
         public void createPayload(){
             payload = new BuildPayload(output, this.team);
-            Log.info(this.payload);
-            moveOutPayload();
-            if(payload.build instanceof CompactPayload.CompactPayloadBuild comp) {
-                comp.setUnit(UnitTypes.dagger);
-                comp.weapons.add(UnitTypes.scepter.weapons.get(0));
-            };
             Log.info(this.payload);
         }
 
