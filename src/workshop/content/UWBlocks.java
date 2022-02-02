@@ -8,7 +8,7 @@ import workshop.world.blocks.*;
 import workshop.type.*;
 
 public class UWBlocks implements ContentList{
-    public static Block unitCrate, workshop;
+    public static Block unitCrate, workshop, testBlock;
 
     @Override
     public void load() {
@@ -20,5 +20,6 @@ public class UWBlocks implements ContentList{
                 new WeaponRecipe(ItemStack.with(Items.lead, 200, Items.graphite, 70, Items.silicon, 120), UnitTypes.retusa.weapons.get(0))
             };
         }};
+        testBlock = new TestBlock("test-block");
     }
 }
