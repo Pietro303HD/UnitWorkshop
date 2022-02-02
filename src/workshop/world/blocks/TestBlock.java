@@ -31,7 +31,7 @@ public class TestBlock extends PayloadBlock{
         @Override
         public void buildConfiguration(Table table){
             table.button(Icon.download, () -> {
-                payload = new BuildPayload(Vars.content.blocks.router, team);
+                payload = new BuildPayload(Vars.content.blocks().router, team);
             });           
         }
 
