@@ -2,6 +2,7 @@ package workshop.world.blocks;
 
 import arc.scene.ui.layout.*;
 import arc.scene.style.*;
+import arc.util.*;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.gen.*;
@@ -47,7 +48,8 @@ public class Workshop extends PayloadBlock{
 
         // temporary method for making CompactPayload
         public void createPayload(){
-            this.payload = new BuildPayload(output, this.team);
+            payload = new BuildPayload(output, this.team);
+            Log.info(this.payload);
             if(payload.build instanceof CompactPayload.CompactPayloadBuild comp) {
                 comp.setUnit(UnitTypes.dagger);
                 comp.weapons.add(UnitTypes.scepter.weapons.get(0));
