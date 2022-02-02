@@ -22,11 +22,6 @@ public class CompactPayload extends Block{
         category = Category.units;
     }
 
-    @Override
-    public boolean canBeBuilt(){
-        return false;
-    }
-
     public class CompactPayloadBuild extends Building{
         Seq<Weapon> weapons = Seq.with();
         UnitType unit;
